@@ -50,8 +50,8 @@ const posts = [
     <section class="py-24 bg-white">
         <div class="container-custom">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {posts.map((post) => (
-                    <article class="bg-white rounded-2xl border border-secondary/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col h-full hover:-translate-y-1">
+                {posts.map((post, i) => (
+                    <article class="bg-white rounded-2xl border border-secondary/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col h-full hover:-translate-y-1" data-reveal style={`transition-delay:${i * 0.12}s`}>
                         <!-- Image -->
                         <div class="aspect-[16/10] overflow-hidden relative">
                             <img src={post.image} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
