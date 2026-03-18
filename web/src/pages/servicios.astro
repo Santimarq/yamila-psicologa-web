@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import evalImg from '../assets/servicio_evaluaciones.png';
+import supImg from '../assets/servicio_supervision.png';
+import acompImg from '../assets/servicio_acompanamiento.png';
+---
+
+<Layout title="Especialidades" description="Evaluaciones de neurodesarrollo, supervisión clínica y acompañamiento familiar.">
+    <!-- Header Hero -->
+    <header class="relative py-24 lg:py-32 overflow-hidden flex items-center justify-center min-h-[40vh] bg-primary">
+        <!-- Elegant Curved Overlay to match reference -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-full bg-gradient-to-b from-white/15 to-transparent rounded-b-[100%] pointer-events-none"></div>
+        
+        <div class="container-custom relative z-10 text-center animate-fade-in-up">
+            <span class="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold tracking-wider uppercase mb-6 backdrop-blur-sm shadow-sm">
+                Especialidades Clínicas
+            </span>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white mb-6 tracking-tight drop-shadow-sm">Mis Servicios</h1>
+            <p class="text-base md:text-lg text-blue-50 max-w-xl mx-auto font-medium leading-relaxed drop-shadow-sm">Práctica clínica rigurosa, orientada al desarrollo integral funcional y respaldada por protocolos estandarizados.</p>
+        </div>
+    </header>
+
+    <!-- Main Content: Full-width Editorial Layouts -->
+    <div class="bg-white">
+        
+        <!-- Service 1: Evaluaciones -->
+        <section id="evaluaciones" class="py-24 border-b border-secondary/50">
+            <div class="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="order-2 lg:order-1 animate-fade-in-up">
+                    <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Diagnóstico y Valoración</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-dark mb-6 leading-tight">Evaluaciones<br/>Infantiles</h2>
+                    <p class="text-lg text-text-body font-light mb-8 leading-relaxed">Realizo evaluaciones clínicas especializadas e integrales que detectan con precisión las necesidades de apoyo cognitivo, social y conductual del paciente.</p>
+                    
+                    <div class="space-y-4 mb-10 pl-4 border-l border-secondary-dark">
+                        <p class="text-text-dark font-medium pb-2 border-b border-secondary">Detección temprana de la condición del Espectro Autista.</p>
+                        <p class="text-text-dark font-medium pb-2 border-b border-secondary">Valoración objetiva del desarrollo normativo.</p>
+                        <p class="text-text-dark font-medium pb-2 border-b border-secondary">Medición empírica de habilidades adaptativas.</p>
+                        <p class="text-text-dark font-medium">Análisis de Funciones Ejecutivas e Inteligencia (WISC/WPPSI).</p>
+                    </div>
+
+                    <a href="/contacto?motivo=evaluacion" class="inline-flex items-center justify-center bg-primary text-white hover:bg-primary-dark transition-all px-8 py-4 rounded-full text-xs tracking-widest uppercase font-bold shadow-md hover:-translate-y-1">
+                        Solicitar información
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="aspect-[4/3] relative overflow-hidden shadow-2xl rounded-[2rem]">
+                        <Image src={evalImg} alt="Evaluación Clínica Infantil" class="w-full h-full object-cover" widths={[600, 1024]} sizes="(max-width: 1024px) 100vw, 50vw" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 2: Supervisiones -->
+        <section id="supervisiones" class="py-24 bg-bg-light border-b border-secondary/50">
+            <div class="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="order-1 lg:order-1">
+                    <div class="aspect-[4/3] relative overflow-hidden shadow-2xl rounded-[2rem]">
+                        <Image src={supImg} alt="Supervisión Clínica Profesional" class="w-full h-full object-cover" widths={[600, 1024]} sizes="(max-width: 1024px) 100vw, 50vw" />
+                    </div>
+                </div>
+                <div class="order-2 lg:order-2">
+                    <span class="text-text-dark font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Formación Profesional</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-dark mb-6 leading-tight">Supervisión<br/>Clínica</h2>
+                    <p class="text-lg text-text-body font-light mb-8 leading-relaxed">Espacio técnico-práctico destinado a psicólogos, acompañantes terapéuticos y equipos educativos intervinientes.</p>
+                    
+                    <p class="text-text-body font-light mb-10 leading-relaxed">
+                        El objetivo es proveer guía metodológica bajo el marco del Análisis de la Conducta Aplicada (ABA), analizando planes de intervención, obstáculos del caso y asegurando el rigor ético en el tratamiento.
+                    </p>
+
+                    <a href="/contacto?motivo=supervision" class="inline-flex items-center justify-center bg-primary text-white hover:bg-primary-dark transition-all px-8 py-4 rounded-full text-xs tracking-widest uppercase font-bold shadow-md hover:-translate-y-1">
+                        Solicitar información
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 3: Acompañamiento -->
+        <section id="familias" class="py-24">
+            <div class="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="order-2 lg:order-1">
+                    <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Psicoeducación Integrativa</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-text-dark mb-6 leading-tight">Acompañamiento<br/>Familiar</h2>
+                    <p class="text-lg text-text-body font-light mb-6 leading-relaxed">El bienestar del núcleo familiar es el pilar para el éxito de cualquier intervención terapéutica infantil.</p>
+                    
+                    <p class="text-text-body font-light mb-10 leading-relaxed">
+                        Este espacio de consultoría ofrece entrenamiento a cuidadores para el manejo de conductas desafiantes, fomento de la comunicación funcional, y contención emocional ante diagnósticos de neurodesarrollo. Orientado a empoderar sistemáticamente a la familia mediante estrategias replicables en el contexto natural.
+                    </p>
+
+                    <a href="/contacto?motivo=acompanamiento" class="inline-flex items-center justify-center bg-primary text-white hover:bg-primary-dark transition-all px-8 py-4 rounded-full text-xs tracking-widest uppercase font-bold shadow-md hover:-translate-y-1">
+                        Solicitar información
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="aspect-[4/3] relative overflow-hidden shadow-2xl rounded-[2rem]">
+                        <Image src={acompImg} alt="Acompañamiento Familiar Integrativo" class="w-full h-full object-cover" widths={[600, 1024]} sizes="(max-width: 1024px) 100vw, 50vw" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA Section (Match Home CTA Style) -->
+    <section class="py-24 bg-[#FBFAF9] relative overflow-hidden border-t border-gray-100 mt-12">
+        <!-- Subtle decorative shapes -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(35,108,229,0.03),transparent_50%)] pointer-events-none"></div>
+
+        <div class="container-custom relative z-10 px-4 md:px-8">
+            <div class="bg-white rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(35,108,229,0.1)] border border-gray-50 max-w-[1400px] mx-auto overflow-hidden relative">
+                <!-- Inner decoration -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+                
+                <div class="grid lg:grid-cols-12 items-stretch">
+                    
+                    <!-- Text Content -->
+                    <div class="lg:col-span-5 p-8 md:p-16 lg:p-20 flex flex-col justify-center order-2 lg:order-1 text-center lg:text-left">
+                        <div class="flex items-center justify-center lg:justify-start gap-4 mb-6">
+                            <div class="w-8 h-px bg-primary/40 hidden lg:block"></div>
+                            <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase">Demos el primer paso</span>
+                            <div class="w-8 h-px bg-primary/40"></div>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-[42px] font-heading font-extrabold text-text-dark mb-6 leading-tight">
+                            Comencemos este <span class="text-primary">camino</span> juntos
+                        </h2>
+                        
+                        <p class="text-text-body font-light text-lg mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                            Si buscás una evaluación profesional, espacio de supervisión o necesitás orientación para el desarrollo de tu familia, estoy aquí para escucharte y acompañarte en cada etapa del proceso.
+                        </p>
+                        
+                        <a href="/contacto" class="inline-flex items-center justify-center gap-3 bg-primary text-white px-7 py-3 rounded-full font-medium hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-[15px]">
+                            Agendar mi primer turno
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Image Content -->
+                    <div class="lg:col-span-7 order-1 lg:order-2 relative min-h-[400px] lg:min-h-0">
+                        <img
+                            src="/yamila-cta.png"
+                            alt="Yamila Tabarez en su consultorio"
+                            class="absolute inset-0 w-full h-full object-cover object-center"
+                        />
+                        <!-- Gradient Overlay to blend with white background -->
+                        <div class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-white/20 via-transparent to-transparent hidden lg:block"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #236CE5;
+  --color-primary-light: #e8f0fe;
+  --color-primary-dark: #1b56b8;
+  --color-secondary: #F2F1EC;
+  --color-secondary-dark: #e5e4de;
+  --color-accent: #236CE5;
+
+  --color-bg-light: #ffffff;
+  --color-text-dark: #1a1a2e;
+  --color-text-body: #555555;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.5, 0, 0, 1) forwards;
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+}
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-text-body bg-bg-light antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-text-dark leading-tight;
+  }
+}
+
+/* Standard Utility Classes */
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 lg:px-8 w-full;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, #ffffff 60%, #eef4ff 100%);
+  }
+  .card-shadow {
+    box-shadow: 0 10px 30px -5px rgba(35, 108, 229, 0.08);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .floating-badge {
+    animation: float 4s ease-in-out infinite;
+  }
+}

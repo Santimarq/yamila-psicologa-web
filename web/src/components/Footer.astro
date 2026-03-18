@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/Logo con nombre.png';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#f3f4f6] text-gray-700 pt-12 pb-8 border-t border-gray-200 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+        
+        <!-- Brand -->
+        <div class="flex flex-col items-center md:items-start">
+            <img 
+                src={logoImg.src} 
+                alt="Lic. Yamila Tabarez" 
+                class="w-48 h-auto object-contain mb-6"
+            />
+        </div>
+
+        <!-- Links -->
+        <div>
+            <h4 class="font-heading text-lg font-semibold mb-4 text-text-dark">Enlaces Rápidos</h4>
+            <ul class="space-y-3 font-body text-gray-500">
+                <li><a href="/" class="hover:text-primary transition-colors">Inicio</a></li>
+                <li><a href="/sobre-mi" class="hover:text-primary transition-colors">Sobre Mí</a></li>
+                <li><a href="/servicios" class="hover:text-primary transition-colors">Servicios</a></li>
+                <li><a href="/blog" class="hover:text-primary transition-colors">Blog</a></li>
+                <li><a href="/contacto" class="hover:text-primary transition-colors">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h4 class="font-heading text-lg font-semibold mb-4 text-text-dark">Contacto</h4>
+            <ul class="space-y-4 font-body text-gray-500 text-sm">
+                <li class="flex items-start justify-center md:justify-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-1 text-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Luján, Buenos Aires<br/>(Atención Presencial y Online)</span>
+                </li>
+                <li class="flex items-center justify-center md:justify-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>+54 9 2323 33-1301</span>
+                </li>
+                <li class="flex items-center justify-center md:justify-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-primary"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span>licyamilatabarez@gmail.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-8 pt-6 border-t border-gray-300 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400 font-body">
+        <p>&copy; {currentYear} Lic. Yamila Tabarez. Todos los derechos reservados.</p>
+        <p>
+            Diseño y desarrollo: 
+            <a href="https://santiagomarquez.tech/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-dark transition-colors font-medium">
+                Santiago Marquez Tech
+            </a>
+        </p>
+    </div>
+</footer>

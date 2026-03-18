@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/Logo con nombre.png';
+
+const navItems = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Sobre Mí', path: '/sobre-mi' },
+  { name: 'Servicios', path: '/servicios' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'Contacto', path: '/contacto' },
+];
+---
+
+<header id="header" class="fixed w-full top-0 left-0 z-50 bg-white/95 backdrop-blur-md border-b border-primary/10 transition-all duration-300 h-28 lg:h-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="/" class="flex-shrink-0 relative h-20 md:h-24 lg:h-[105px] transition-transform duration-300 hover:scale-105">
+            <Image 
+                src={logoImg} 
+                alt="Logo Yamila Psicóloga" 
+                class="w-auto h-full object-contain"
+                width={250}
+            />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+            <ul class="flex gap-8">
+                {navItems.map((item) => (
+                    <li>
+                        <a href={item.path} class="text-text-dark font-medium hover:text-primary transition-colors relative group text-[15px]">
+                            {item.name}
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+            <a href="/contacto" class="bg-primary hover:bg-primary-dark text-white px-7 py-2.5 rounded-full font-medium transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 text-[15px]">
+                Agendar Turno
+            </a>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden text-text-dark text-2xl focus:outline-none" aria-label="Abrir menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+    </div>
+
+    <!-- Mobile MenuOverlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-text-dark text-2xl" aria-label="Cerrar menú">
+             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        {navItems.map((item) => (
+            <a href={item.path} class="mobile-link text-2xl font-heading font-medium text-text-dark hover:text-primary">
+                {item.name}
+            </a>
+        ))}
+        <a href="/contacto" class="bg-primary hover:bg-primary-dark transition-colors text-white px-8 py-3 rounded-full font-medium text-lg mt-4 shadow-md">
+            Agendar Turno
+        </a>
+    </div>
+</header>
+
+<script>
+    function setupMobileMenu() {
+        const header = document.getElementById('header');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header?.classList.add('shadow-sm');
+            } else {
+                header?.classList.remove('shadow-sm');
+            }
+        });
+
+        // Toggle menu
+        const toggleMenu = () => {
+            if(mobileMenu) {
+                mobileMenu.classList.toggle('translate-x-full');
+                document.body.classList.toggle('overflow-hidden');
+            }
+        };
+
+        if(mobileBtn) mobileBtn.addEventListener('click', toggleMenu);
+        if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    }
+
+    // Run on initial load
+    setupMobileMenu();
+
+    // Run on Astro View Transition navigation
+    document.addEventListener('astro:page-load', setupMobileMenu);
+</script>

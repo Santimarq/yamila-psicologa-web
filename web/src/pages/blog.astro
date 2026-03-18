@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Placeholder data for the blog posts
+const posts = [
+  {
+    title: 'La importancia de la detección temprana en el Autismo',
+    excerpt: 'Identificar a tiempo las señales del espectro autista puede marcar una gran diferencia en el desarrollo neurocognitivo y la calidad de vida de los niños.',
+    date: '15 de Marzo, 2026',
+    category: 'Autismo',
+    slug: 'importancia-deteccion-temprana-autismo',
+    image: '/blog/blog_deteccion_temprana.png'
+  },
+  {
+    title: 'Estrategias para el manejo de conductas desafiantes en casa',
+    excerpt: 'Herramientas prácticas para que las familias puedan acompañar y regular los momentos de desregulación emocional de forma respetuosa.',
+    date: '28 de Febrero, 2026',
+    category: 'Crianza',
+    slug: 'estrategias-conductas-desafiantes',
+    image: '/blog/blog_conductas_desafiantes.png'
+  },
+  {
+    title: '¿Qué es el Análisis Conductual Aplicado (ABA)?',
+    excerpt: 'Una introducción clara y profesional a uno de los enfoques con mayor evidencia científica para potenciar el aprendizaje y la autonomía.',
+    date: '10 de Febrero, 2026',
+    category: 'Intervenciones',
+    slug: 'que-es-terapia-aba',
+    image: '/blog/blog_terapia_aba.png'
+  }
+];
+---
+
+<Layout title="Blog" description="Artículos, recursos y novedades sobre psicología infantil, autismo y neurodesarrollo.">
+    <!-- Header Hero -->
+    <header class="relative py-24 lg:py-32 overflow-hidden flex items-center justify-center min-h-[40vh] bg-primary">
+        <!-- Elegant Curved Overlay to match reference -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-full bg-gradient-to-b from-white/15 to-transparent rounded-b-[100%] pointer-events-none"></div>
+        
+        <div class="container-custom relative z-10 text-center animate-fade-in-up">
+            <span class="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold tracking-wider uppercase mb-6 backdrop-blur-sm shadow-sm">
+                Recursos y Novedades
+            </span>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white mb-6 tracking-tight drop-shadow-sm">Blog</h1>
+            <p class="text-base md:text-lg text-blue-50 max-w-xl mx-auto font-medium leading-relaxed drop-shadow-sm">Reflexiones clínicas, información actualizada sobre neurodesarrollo y herramientas prácticas.</p>
+        </div>
+    </header>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-24 bg-white">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {posts.map((post) => (
+                    <article class="bg-white rounded-2xl border border-secondary/60 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col h-full hover:-translate-y-1">
+                        <!-- Image -->
+                        <div class="aspect-[16/10] overflow-hidden relative">
+                            <img src={post.image} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-white/90 backdrop-blur-sm text-primary-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                    {post.category}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-8 flex flex-col flex-grow">
+                            <span class="text-xs text-text-body/70 font-medium mb-3 block">{post.date}</span>
+                            <h2 class="text-xl font-heading font-bold text-text-dark mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                                <a href={`/blog/${post.slug}`}>
+                                    {post.title}
+                                </a>
+                            </h2>
+                            <p class="text-text-body text-sm leading-relaxed mb-6 line-clamp-3">
+                                {post.excerpt}
+                            </p>
+                            
+                            <!-- Read More -->
+                            <div class="mt-auto pt-6 border-t border-secondary">
+                                <a href={`/blog/${post.slug}`} class="inline-flex items-center text-primary font-bold text-sm tracking-wide group-hover:text-primary-dark transition-colors">
+                                    Leer artículo
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+            
+            <!-- Pagination Placeholder (Optional) -->
+            <div class="mt-16 flex justify-center">
+                <nav class="flex items-center gap-2">
+                    <span class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</span>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-secondary text-text-dark font-medium transition-colors">2</a>
+                    <span class="px-2 text-text-body">...</span>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-secondary text-text-dark font-medium transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+</Layout>

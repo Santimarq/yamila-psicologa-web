@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import sobreMiImg from '../assets/sobre mi.jpg';
+---
+
+<Layout title="Sobre Mí" description="Conocé mi formación, experiencia y enfoque como psicóloga especializada en Autismo.">
+    <!-- Header Hero -->
+    <header class="relative py-24 lg:py-32 overflow-hidden flex items-center justify-center min-h-[40vh] bg-primary">
+        <!-- Elegant Curved Overlay to match reference -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-full bg-gradient-to-b from-white/15 to-transparent rounded-b-[100%] pointer-events-none"></div>
+        
+        <div class="container-custom relative z-10 text-center animate-fade-in-up">
+            <span class="inline-block py-1 px-4 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold tracking-wider uppercase mb-6 backdrop-blur-sm shadow-sm">
+                Conoceme
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white mb-6 tracking-tight drop-shadow-sm text-balance">Sobre Mí</h1>
+            <p class="text-base sm:text-lg text-blue-50 max-w-xl mx-auto font-medium leading-relaxed drop-shadow-sm">Trayectoria, mirada profesional y compromiso con el desarrollo integral.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="section-padding bg-bg-light">
+        <div class="container-custom grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            <!-- Image Column -->
+            <div class="lg:col-span-5 relative animate-fade-in-up">
+                <div class="sticky top-32">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border-4 border-white mb-6 bg-secondary">
+                        <img 
+                            src="/yamila-about.jpg" 
+                            alt="Lic. Yamila Tabarez" 
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-secondary text-center">
+                        <h3 class="font-heading font-bold text-primary-dark text-xl mb-1">Lic. Yamila Tabarez</h3>
+                        <p class="text-text-body font-medium text-sm mb-4">M.N. 123456</p>
+                        <hr class="border-secondary mb-4"/>
+                        <p class="text-sm text-text-body italic">"Cada persona es única y merece un espacio de escucha, respeto y comprensión profunda."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Column -->
+            <div class="lg:col-span-7 prose prose-lg prose-blue max-w-none animate-fade-in-up" style="animation-delay: 0.1s;">
+                <h2 class="text-3xl font-heading font-bold text-text-dark mb-6">Conoce mi trayectoria</h2>
+                
+                <p class="text-text-body mb-6">
+                    Soy <strong>Yamila Tabarez</strong>, psicóloga egresada de la Universidad de Buenos Aires (UBA) y Coach Ontológico certificada por la Federación Internacional de Coaching (ICF).
+                </p>
+
+                <p class="text-text-body mb-8">
+                    Mi recorrido profesional me ha llevado a especializarme en <strong>Autismo</strong>. Estoy diplomada en <em>Análisis Conductual Aplicado (ABA)</em> por la Universidad Abierta Interamericana (UAI). Actualmente, con el firme propósito de brindar a la comunidad un acompañamiento especializado y de excelencia, me encuentro realizando un postgrado en ABA y Autismo, avalado por la Organización Internacional de Análisis Conductual (IBAO) en España.
+                </p>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-primary mb-8">
+                    <h3 class="font-heading text-2xl font-bold text-primary-dark mb-4">Formación Específica</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 shrink-0 mt-1"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            <span class="text-text-body">Certificada en Sistemas de Comunicación Aumentativo Alternativo (SAAC) como <strong>PECS</strong> y <strong>Comunicación Bimodal</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 shrink-0 mt-1"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            <span class="text-text-body">Evaluaciones para la detección temprana de autismo.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 shrink-0 mt-1"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            <span class="text-text-body">Valoraciones del desarrollo infantil, habilidades adaptativas, funciones ejecutivas y coeficiente intelectual.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="text-2xl font-heading font-bold text-text-dark mb-4 mt-12">Mi Enfoque de Trabajo</h3>
+                <p class="text-text-body mb-6">
+                    Las evaluaciones tempranas e integrales nos permiten comprender profundamente las fortalezas y los desafíos de cada niño, niña y adolescente, orientando así intervenciones individualizadas y precisas, siempre desde una mirada <strong>empática, ética y respetuosa</strong>.
+                </p>
+
+                <p class="text-text-body mb-6">
+                    Además de mi trabajo dinámico en el consultorio, brindo supervisión clínica a acompañantes terapéuticos, docentes y profesionales de la salud mental. Mi objetivo es ayudarlos a reflexionar sobre sus prácticas, fortalecer sus intervenciones y acompañarlos en su propio crecimiento como profesionales.
+                </p>
+
+                <p class="text-text-body mb-8">
+                    Amo compartir las herramientas en las que me he formado y ayudar desde la experiencia práctica. Por ese motivo, también disfruto profundamente de brindar capacitaciones en jardines de infantes, escuelas, asociaciones civiles e iglesias.
+                </p>
+
+                <!-- Mission -->
+                <div class="mt-12 bg-primary-light p-10 rounded-3xl relative overflow-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote absolute -top-4 -right-4 opacity-10"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    
+                    <h3 class="font-heading text-2xl font-bold text-primary-dark mb-4 relative z-10">Mi Misión</h3>
+                    <p class="text-text-dark text-lg mb-4 relative z-10 font-medium">
+                        Acompañar y orientar a niños/as, familias, docentes y profesionales desde una mirada humanista, integral e inclusiva, con el compromiso firme de mejorar la calidad de vida y favorecer entornos de crecimiento, inclusión y amor.
+                    </p>
+                    <p class="text-text-body relative z-10 mb-4">
+                        Creo profundamente en el trabajo en equipo y en la vital importancia de construir redes de apoyo sólidas, tanto dentro del ámbito familiar como en la propia comunidad. Mi enfoque se ancla en la empatía, el compromiso y la solidaridad.
+                    </p>
+                    <p class="text-text-body relative z-10">
+                        Me apasiona trabajar mano a mano con las familias, brindándoles herramientas prácticas y verdadera contención emocional, apostando al trabajo comunitario como el mayor espacio de inclusión y aprendizaje mutuo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
