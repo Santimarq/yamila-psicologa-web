@@ -84,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
                         <label for="motivo" class="text-sm font-bold text-text-dark ml-1">Motivo de consulta *</label>
                         <select id="motivo" name="motivo" required class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none bg-bg-light/80 hover:bg-white text-text-dark shadow-sm appearance-none font-medium text-base">
                             <option value="">Selecciona una opción...</option>
-                            <option value="evaluacion">Evaluación Infantil</option>
+                            <option value="evaluacion">Evaluación Clínica</option>
                             <option value="supervision">Supervisión Clínica</option>
                             <option value="acompanamiento">Acompañamiento Familiar</option>
                             <option value="otro">Otro motivo / Duda en general</option>
@@ -142,7 +142,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-    // Logic to show file upload if "Evaluación Infantil" is selected
+    // Logic to show file upload if "Evaluación Clínica" is selected
     const motivoSelect = document.getElementById('motivo') as HTMLSelectElement;
     const fileContainer = document.getElementById('file-upload-container');
     const fileInput = document.getElementById('orden') as HTMLInputElement;
