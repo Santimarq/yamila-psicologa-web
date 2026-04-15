@@ -8,31 +8,139 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "Acompañando familias e infancias con contención, herramientas y orientación. Especialista en Autismo y ABA." } = Astro.props;
+const { title, description = "Psicóloga infantil en Argentina especializada en Autismo, TEA y neurodesarrollo. Evaluaciones ADOS/ADI-R, terapia ABA y acompañamiento familiar. Atención en Luján y online." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- SEO Primary -->
+		<title>{title} | Lic. Yamila Tabarez - Psicóloga Infantil Argentina</title>
 		<meta name="description" content={description} />
-		<title>{title} | Lic. Yamila Tabarez</title>
+		<meta name="keywords" content="psicóloga infantil, autismo, TEA, evaluación ADOS, ADI-R, terapia ABA, neurodesarrollo, psicóloga niños, Argentina, Buenos Aires, Luján, desarrollo infantil, neurodiversidad, acompañamiento familiar" />
+		<meta name="author" content="Lic. Yamila Tabarez" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Geo Tags Argentina -->
+		<meta name="geo.region" content="AR-B" />
+		<meta name="geo.placename" content="Luján, Buenos Aires, Argentina" />
+		<meta name="geo.position" content="-34.5703;-59.1050" />
+		<meta name="ICBM" content="-34.5703, -59.1050" />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
-		<meta property="og:title" content={`${title} | Lic. Yamila Tabarez`} />
+		<meta property="og:title" content={`${title} | Lic. Yamila Tabarez - Psicóloga Infantil`} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL('/yamila-about.jpg', Astro.url)} />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:site_name" content="Lic. Yamila Tabarez - Psicóloga Infantil" />
 
 		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content={`${title} | Lic. Yamila Tabarez`} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL('/yamila-about.jpg', Astro.url)} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={Astro.url} />
+		<meta name="twitter:title" content={`${title} | Lic. Yamila Tabarez - Psicóloga Infantil`} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL('/yamila-about.jpg', Astro.url)} />
+
+		<!-- Schema.org JSON-LD -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": "https://licyamilatabarez.com.ar",
+			"name": "Lic. Yamila Tabarez - Psicóloga Infantil",
+			"description": "Psicóloga especializada en autismo, TEA y neurodesarrollo infantil. Evaluaciones diagnósticas ADOS/ADI-R, terapia ABA y acompañamiento familiar en Argentina.",
+			"url": "https://licyamilatabarez.com.ar",
+			"telephone": "+54-2323-536138",
+			"email": "licyamilatabarez@gmail.com",
+			"image": "https://licyamilatabarez.com.ar/yamila-about.jpg",
+			"priceRange": "$$",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Luján",
+				"addressRegion": "Buenos Aires",
+				"addressCountry": "AR"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": -34.5703,
+				"longitude": -59.1050
+			},
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+				"opens": "09:00",
+				"closes": "17:00"
+			},
+			"sameAs": [],
+			"areaServed": {
+				"@type": "Country",
+				"name": "Argentina"
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Servicios de Psicología Infantil",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Evaluaciones Clínicas",
+							"description": "Evaluaciones diagnósticas ADOS y ADI-R para detección de autismo y TEA"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Supervisión Clínica",
+							"description": "Supervisión para profesionales bajo el marco del Análisis Aplicado de la Conducta (ABA)"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Acompañamiento Familiar",
+							"description": "Orientación y herramientas para familias de niños con necesidades de apoyo"
+						}
+					}
+				]
+			}
+		})} />
+
+		<!-- Person Schema -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Yamila Tabarez",
+			"jobTitle": "Licenciada en Psicología",
+			"description": "Psicóloga infantil especializada en Autismo y Análisis Conductual Aplicado (ABA)",
+			"url": "https://licyamilatabarez.com.ar",
+			"image": "https://licyamilatabarez.com.ar/yamila-about.jpg",
+			"sameAs": [],
+			"worksFor": {
+				"@type": "Organization",
+				"name": "E.S.DI - Espacio para el Desarrollo Infantil"
+			},
+			"alumniOf": [
+				{
+					"@type": "CollegeOrUniversity",
+					"name": "Universidad de Buenos Aires (UBA)"
+				},
+				{
+					"@type": "CollegeOrUniversity",
+					"name": "Universidad Abierta Interamericana (UAI)"
+				}
+			],
+			"knowsAbout": ["Autismo", "TEA", "ABA", "Neurodesarrollo", "Psicología Infantil", "ADOS", "ADI-R"]
+		})} />
 
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
